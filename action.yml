@@ -1,0 +1,30 @@
+name: "Upload debian packages to bintray"
+description: "Upload and publish debian packages to bintray"
+branding:
+  icon: 'upload'
+  color: 'gray-dark'
+inputs:
+  path:
+    description: "Source path of directory full of packages to upload"
+    required: true
+  repo:
+    description: "Bintray repository name"
+    required: true
+  license:
+    description: "Open-source license"
+    required: true
+  username:
+    description: "Bintray username"
+    required: true
+  api_key:
+    description: "Bintray API key"
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
+    - ${{ inputs.repo }}
+    - ${{ inputs.license }}
+    - ${{ inputs.username }}
+    - ${{ inputs.api_key }}
