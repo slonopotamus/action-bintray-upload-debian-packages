@@ -23,7 +23,7 @@ function jfrog_upload {
 }
 
 curl --silent -fL -XGET \
-    "https://api.bintray.com/content/jfrog/jfrog-cli-go/\$latest/jfrog-cli-linux-amd64/jfrog?bt_package=jfrog-cli-linux-amd64" \
+    "https://api.bintray.com/content/jfrog/jfrog-cli-go/1.38.0/jfrog-cli-linux-amd64/jfrog?bt_package=jfrog-cli-linux-amd64" \
     > /usr/local/bin/jfrog
 chmod +x /usr/local/bin/jfrog
 mkdir -p ~/.jfrog/
